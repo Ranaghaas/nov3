@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Spoonacular Food App</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Spoonacular Food App</h1>
+        </header>
+        <main>
+            <section id="search-form">
+                <input type="text" id="searchInput" placeholder="Search for recipes">
+                <button onclick="searchRecipes()">Search</button>
+            </section>
+            <section id="recipe-list" class="hidden">
+            
+            </section>
+        </main>
+        <footer>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            <form id="contactForm">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments" rows="4" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+            <div id="thank-you-message">
+                <p>Thank you for your submission!</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script> 
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            document.getElementById('contact-form').style.display = 'none';
+            document.getElementById('thank-you-message').style.display = 'block';
+        }
+    </script>
+      <script>
+        function submitForm(event) {
+            event.preventDefault();
+            document.getElementById('contact-form').style.display = 'none';
+            document.getElementById('thank-you-message').style.display = 'block';
+
+            setTimeout(() => {
+                document.getElementById('contactForm').reset();
+                document.getElementById('contact-form').style.display = 'block';
+                document.getElementById('thank-you-message').style.display = 'none';
+            }, 3000);
+        }
+    </script>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
